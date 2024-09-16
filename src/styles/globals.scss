@@ -1,0 +1,71 @@
+:root {
+--primary-color: #3e3227;
+--secondary-color: #cc4e24;
+--background: #fcf8f5;
+--white: #ffffff;
+--red: hsl(14, 86%, 42%);
+--rose-50: hsl(20, 50%, 98%);
+--rose-100: hsl(13, 31%, 94%);
+--rose-300: hsl(14, 25%, 72%);
+--rose-400: hsl(7, 20%, 60%);
+--rose-500: hsl(12, 20%, 44%);
+--rose-900: hsl(14, 65%, 9%);
+--border: rgb(104, 103, 103);
+
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-primary);
+  box-sizing: border-box;
+  font-size: 62.5%;
+  color: var(--color-grey-dark-2);
+  font-weight: 300;
+  background-color: var(--rose-100);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+        [full-start] repeat(6, min-content) [full-end sidebar-start] 1fr [sidebar-end];
+   grid-template-rows: repeat(2, 2rem) minmax(2rem, min-content) auto;
+   
+  margin: 4rem 2rem;
+  // gap: 1rem;
+}
+
+button{
+  all: unset;
+  padding: 0 .2rem;
+}
