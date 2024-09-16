@@ -23,15 +23,56 @@ interface CartProps {
     cart: Cart;
     setCart: React.Dispatch<React.SetStateAction<Cart>>;
     setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
-    removeItem: () => void;
 
 }
 
 
-const Cart: React.FC<CartProps> = ({ cart, setCart, setProducts, removeItem }) => {
+const Cart: React.FC<CartProps> = ({ cart, setCart, setProducts }) => {
     const [openModal, setOpenModal] = useState(false)
 
-   
+    const removeItem = (product: Product) => {
+        
+        setCart((prevCart) => {
+            
+            if (prevCart.totalQuantity === 1) {
+                return { ...prevCart, products: [], totalPrice: 0, totalQuantity: 0 }
+
+            } else {
+
+                const updatedCartProducts = prevCart.products.map((cartProduct) => (
+                    cartProduct.name === product.name ? { ...cartProduct, quantity: cartProduct.quantity - 1 } : cartProduct
+                ))
+                if (product.quantity > 1) {
+
+                    return ({
+                        ...prevCart,
+                        products: updatedCartProducts,
+                        totalPrice: prevCart.totalPrice - product.price,
+                        totalQuantity: prevCart.totalQuantity - 1
+                    })
+
+                } else {
+                    const updatedCart = prevCart.products.filter((cartProduct) => cartProduct.name !== product.name)
+                    return ({
+                        ...prevCart,
+                        products: updatedCart,
+                        totalPrice: prevCart.totalPrice - product.price,
+                        totalQuantity: prevCart.totalQuantity - 1
+                    })
+                }
+            }
+
+        })
+        setProducts((prevProducts) => {
+
+            return prevProducts.map((item) => {
+
+                return product.name === item.name ? { ...item, quantity: item.quantity - 1} : item;
+
+            })
+
+        });
+    }
 
     const onOrderClick = () => {
         setOpenModal(true)

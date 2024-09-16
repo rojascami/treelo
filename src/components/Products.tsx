@@ -36,49 +36,7 @@ export default function Products() {
         totalPrice: 0
     });
 
-    const removeItem = (product: Product) => {
-        
-        setCart((prevCart) => {
-            console.log(prevCart)
-            if (prevCart.totalQuantity === 1) {
-                return { ...prevCart, products: [], totalPrice: 0, totalQuantity: 0 }
-
-            } else {
-
-                const updatedCartProducts = prevCart.products.map((cartProduct) => (
-                    cartProduct.name === product.name ? { ...cartProduct, quantity: cartProduct.quantity - 1 } : cartProduct
-                ))
-                if (product.quantity > 1) {
-
-                    return ({
-                        ...prevCart,
-                        products: updatedCartProducts,
-                        totalPrice: prevCart.totalPrice - product.price,
-                        totalQuantity: prevCart.totalQuantity - 1
-                    })
-
-                } else {
-                    const updatedCart = prevCart.products.filter((cartProduct) => cartProduct.name !== product.name)
-                    return ({
-                        ...prevCart,
-                        products: updatedCart,
-                        totalPrice: prevCart.totalPrice - product.price,
-                        totalQuantity: prevCart.totalQuantity - 1
-                    })
-                }
-            }
-
-        })
-        setProducts((prevProducts) => {
-
-            return prevProducts.map((item) => {
-
-                return product.name === item.name ? { ...item, quantity: item.quantity - 1} : item;
-
-            })
-
-        });
-    }
+    
 
 
     return (
@@ -90,12 +48,12 @@ export default function Products() {
                 <div className="products__items">
 
                     {products.map((item, index) => {
-                        return <Card product={item} setProducts={setProducts} index={index} key={index} setCart={setCart} removeItem={() => removeItem(item)}/>
+                        return <Card product={item} setProducts={setProducts} index={index} key={index} setCart={setCart} />
                     })}
                 </div>
             </div>
             <div className='cart__products'>
-                <Cart cart={cart} setCart={setCart} setProducts={setProducts} removeItem={() => removeItem(item)}/>
+                <Cart cart={cart} setCart={setCart} setProducts={setProducts}/>
             </div>
         </>
     )

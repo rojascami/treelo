@@ -19,16 +19,20 @@ interface cartState {
     totalQuantity: number;
     totalPrice: number;
 }
-
+interface Cart {
+    products: Product[],
+    totalQuantity: number,
+    totalPrice: number
+}
 interface CardProps {
     product: Product;
     setCart: React.Dispatch<React.SetStateAction<cartState>>;
     setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
-    removeItem: () => void;
     index: number;
+    cart: Cart;
 }
 
-const Card: React.FC<CardProps> = ({ product, setProducts, setCart, removeItem, index }) => {
+const Card: React.FC<CardProps> = ({ product, setProducts, setCart, cart, index }) => {
 
     const addQuantity = () => {
         setProducts((prevProducts) => {
@@ -43,7 +47,6 @@ const Card: React.FC<CardProps> = ({ product, setProducts, setCart, removeItem, 
 
 
         setCart((prevItems) => {
-            console.log(prevItems)
             const existingProduct = prevItems.products.find((item) => item.name === product.name);
 
             if (existingProduct) {
@@ -68,7 +71,7 @@ const Card: React.FC<CardProps> = ({ product, setProducts, setCart, removeItem, 
     }
 
     const subQuantity = () => {
-        removeItem
+    
         setProducts((prevProducts) => {
 
             return prevProducts.map((item, i) => {
@@ -91,13 +94,14 @@ const Card: React.FC<CardProps> = ({ product, setProducts, setCart, removeItem, 
                 return {
                     products: updatedProducts,
                     totalQuantity: prevItems.totalQuantity - 1,
-                    totalPrice: prevItems.totalPrice + product.price
+                    totalPrice: prevItems.totalPrice - product.price
                 }
             } else {
+                const updatedCart = prevItems.products.filter((cartProduct) => cartProduct.name !== product.name)
                 return {
-                    products: [...prevItems.products, { ...product, quantity: 0 }],
+                    products:updatedCart,
                     totalQuantity: prevItems.totalQuantity - 1,
-                    totalPrice: prevItems.totalPrice + product.price
+                    totalPrice: prevItems.totalPrice - product.price
                 }
             }
 
