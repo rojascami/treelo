@@ -1,0 +1,10 @@
+
+@keyframes animate {
+    0% {background-position: 0}
+    100% {  background-position: 200%;}
+  }
+  @keyframes scale {
+    0% {scale: 0}
+    50% { scale: .5; transform-origin: bottom;}
+    100% { scale: 1;}
+  }

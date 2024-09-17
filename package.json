@@ -1,0 +1,21 @@
+{
+  "name": "trillo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass-dev": "sass --watch --update --style=expanded sass/main.scss css/style.css",
+    "sass-prod": "sass --no-source-map --style=compressed sass/scss:css/css",
+    
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver sass-dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.71.1"
+  },
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
