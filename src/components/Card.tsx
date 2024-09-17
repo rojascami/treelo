@@ -2,7 +2,7 @@
 
 import '@/styles/card.scss';
 import Image from 'next/image';
-import addtoCartIcon from '/public/images/icon-add-to-cart.svg';
+import addtoCartIcon from '/public/icon-add-to-cart.svg';
 import DecrementIcon from '@/components/DecrementIcon';
 import IncrementIcon from '@/components/IncrementIcon';
 

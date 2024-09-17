@@ -1,5 +1,5 @@
 import '@/styles/modal.scss';
-import orderConfirmed from '/public/images/icon-order-confirmed.svg'
+import orderConfirmed from '/public/icon-order-confirmed.svg'
 import { useRef, useEffect } from "react";
 import Image from 'next/image';
 
