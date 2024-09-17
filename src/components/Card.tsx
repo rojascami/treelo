@@ -19,11 +19,6 @@ interface cartState {
     totalQuantity: number;
     totalPrice: number;
 }
-interface Cart {
-    products: Product[],
-    totalQuantity: number,
-    totalPrice: number
-}
 interface CardProps {
     product: Product;
     setCart: React.Dispatch<React.SetStateAction<cartState>>;
