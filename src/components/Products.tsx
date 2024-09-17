@@ -36,15 +36,15 @@ export default function Products() {
         totalPrice: 0
     });
 
-    
+
 
 
     return (
-        <> <h2 className='heading'>
-        Desserts
-    </h2>
-            <div className='products'>
-               
+        <div className="container">
+            <div className='products__market'>
+                <h2 className='heading'>
+                    Desserts
+                </h2>
                 <div className="products__items">
 
                     {products.map((item, index) => {
@@ -52,9 +52,9 @@ export default function Products() {
                     })}
                 </div>
             </div>
-            <div className='cart__products'>
-                <Cart cart={cart} setCart={setCart} setProducts={setProducts}/>
-            </div>
-        </>
+            {/* <div className='cart__products'> */}
+                <Cart cart={cart} setCart={setCart} setProducts={setProducts} />
+            {/* </div> */}
+        </div>
     )
 }

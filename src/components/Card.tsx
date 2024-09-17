@@ -29,10 +29,9 @@ interface CardProps {
     setCart: React.Dispatch<React.SetStateAction<cartState>>;
     setProducts: React.Dispatch<React.SetStateAction<Product[]>>;
     index: number;
-    cart: Cart;
 }
 
-const Card: React.FC<CardProps> = ({ product, setProducts, setCart, cart, index }) => {
+const Card: React.FC<CardProps> = ({ product, setProducts, setCart, index }) => {
 
     const addQuantity = () => {
         setProducts((prevProducts) => {
@@ -85,9 +84,9 @@ const Card: React.FC<CardProps> = ({ product, setProducts, setCart, cart, index 
 
 
         setCart((prevItems) => {
-            const existingProduct = prevItems.products.find((item) => item.name === product.name);
+            // const existingProduct = prevItems.products.find((item) => item.name === product.name);
 
-            if (existingProduct) {
+            if (product.quantity > 1) {
                 const updatedProducts = prevItems.products.map((cartItem) => {
                     return product.name === cartItem.name ? { ...cartItem, quantity: cartItem.quantity - 1 } : cartItem
                 });

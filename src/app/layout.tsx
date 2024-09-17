@@ -21,12 +21,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${RedHatText.className}`}>
-
-        <div className="container">
-          
-         
+        {/* <div className="container"> */}
         {children}
-        </div>
+        {/* </div> */}
       </body>
     </html>
   );
