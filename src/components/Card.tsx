@@ -27,7 +27,7 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ product, setProducts, setCart, index }) => {
-    
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""; 
 
     const addQuantity = () => {
         setProducts((prevProducts) => {
