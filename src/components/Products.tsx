@@ -3,7 +3,6 @@
 import '@/styles/products.scss'
 import data from '@/lib/data.json';
 import { useState } from 'react';
-import { useRouter } from 'next/router';
 import Card from './Card';
 import Cart from './Cart';
 
