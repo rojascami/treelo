@@ -1,7 +1,7 @@
 import '@/styles/cart.scss';
 import Image from 'next/image';
-import emptyCart from '/public/illustration-empty-cart.svg';
-import carbonNeutral from '/public/icon-carbon-neutral.svg'
+import emptyCart from '/public/images/illustration-empty-cart.svg';
+import carbonNeutral from '/public/images/icon-carbon-neutral.svg'
 import { useState } from 'react';
 import Modal from './Modal';
 import RemoveProduct from '@/components/RemoveProduct'
