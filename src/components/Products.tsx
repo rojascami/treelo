@@ -1,9 +1,10 @@
 'use client'
 
 import '@/styles/products.scss'
-import Card from './Card';
 import data from '@/lib/data.json';
 import { useState } from 'react';
+import { useRouter } from 'next/router';
+import Card from './Card';
 import Cart from './Cart';
 
 interface Product {
@@ -21,7 +22,6 @@ interface CartI {
 }
 
 export default function Products() {
-
 
     const [products, setProducts] = useState<Product[]>(
         data.map(product => ({
