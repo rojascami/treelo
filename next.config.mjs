@@ -16,7 +16,7 @@ const nextConfig = {
   basePath: isProd ? '/dessert-market' : '',
   assetPrefix: isProd ? '/dessert-market/' : '',
   env: {
-    NEXT_PUBLIC_BASE_PATH: isProd ? '/dessert-market' : '',  // Expose the basePath
+    basePath,
   },
 
   /**
