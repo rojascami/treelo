@@ -25,7 +25,11 @@
     color: var(--rose-400);
     font-size: 1rem;
   }
-
+  &__carbon {
+    background-color: var(--rose-100);
+    padding: 1rem;
+    border-radius: 1rem;
+  }
   &__product {
     display: flex;
     justify-content: space-between;
@@ -68,9 +72,7 @@
       }
     }
 
-    &__carbon {
-      background-color: var(--rose-300);
-    }
+    
     &--qty {
       color: var(--red);
       padding-right: .8rem;
