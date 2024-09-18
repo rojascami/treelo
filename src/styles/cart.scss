@@ -68,6 +68,9 @@
       }
     }
 
+    &__carbon {
+      background-color: var(--rose-300);
+    }
     &--qty {
       color: var(--red);
       padding-right: .8rem;

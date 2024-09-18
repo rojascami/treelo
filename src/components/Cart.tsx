@@ -117,7 +117,7 @@ const Cart: React.FC<CartProps> = ({ cart, setCart, setProducts }) => {
 
                         <div className="cart__order">
                             <p className="cart__order--total">Order total: <span>${cart.totalPrice.toFixed(2)}</span></p>
-                            <p><Image src={carbonNeutral} alt="Carbon Neutral" width={20} height={20} /> This is a <span>carbon-neutral</span> delivery</p>
+                            <p className='cart__carbon'><Image src={carbonNeutral} alt="Carbon Neutral" width={20} height={20} /> This is a <span>carbon-neutral</span> delivery</p>
                             <button className='cart__order__confirm' onClick={onOrderClick}>Confirm Order</button>
                         </div>
                     </div>
