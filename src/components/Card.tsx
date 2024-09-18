@@ -129,7 +129,7 @@ const Card: React.FC<CardProps> = ({ product, setProducts, setCart, index }) => 
             <div className="card__info">
                 <p>{product.category}</p>
                 <h3>{product.name}</h3>
-                <p>${product.price}</p>
+                <p>${product.price.toFixed(2)}</p>
             </div>
 
         </div>
