@@ -14,6 +14,10 @@ const nextConfig = {
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
   basePath: isProd ? '/dessert-market' : '',
+  assetPrefix: isProd ? '/dessert-market/' : '',
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isProd ? '/dessert-market' : '',  // Expose the basePath
+  },
 
   /**
    * Disable server-based image optimization. Next.js does not support
