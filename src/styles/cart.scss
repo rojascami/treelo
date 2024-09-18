@@ -3,10 +3,9 @@
 .cart {
   // grid-area: cart;
   grid-column: sidebar-start / sidebar-end;
-  grid-row: 1 / span 1;
   background-color: white;
   border-radius: 1rem;
-  padding: 1rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
 
@@ -45,7 +44,7 @@
       font-size: 1rem;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: center;
       align-items: flex-start;
       color: var(--rose-400);
       gap: 0.5rem;
@@ -55,7 +54,6 @@
 
     &--button {
 
-      
       display: flex;
       align-items: center;
       text-align: center;
@@ -83,6 +81,15 @@
       height: 1px;
       background-color: var(--rose-100);
       display: block;
+      margin: 1rem;
+    }
+    &__image {
+      display: flex;
+      gap: 10px;
+      img {
+        border-radius: 1rem;
+      }
+      
     }
   }
 
@@ -116,4 +123,6 @@
       color: var(--rose-900);
     }
   }
+
+  
 }

@@ -81,7 +81,8 @@ button{
 .container {
   display: grid;
   grid-template-columns: [full-start] repeat(6, min-content) [full-end sidebar-start] 1fr [sidebar-end];
-  grid-template-rows:  repeat(4, 30rem);
+  // grid-template-rows:  repeat(4, 30rem);
+  align-items: start;
   margin: 4rem 2rem;
    
 

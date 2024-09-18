@@ -117,7 +117,7 @@ const Cart: React.FC<CartProps> = ({ cart, setCart, setProducts }) => {
 
                         <div className="cart__order">
                             <p className="cart__order--total">Order total: <span>${cart.totalPrice.toFixed(2)}</span></p>
-                            <p><Image src={carbonNeutral} alt="Empty Cart" width={20} height={20} /> This is a <span>carbon-neutral</span> delivery</p>
+                            <p><Image src={carbonNeutral} alt="Carbon Neutral" width={20} height={20} /> This is a <span>carbon-neutral</span> delivery</p>
                             <button className='cart__order__confirm' onClick={onOrderClick}>Confirm Order</button>
                         </div>
                     </div>
@@ -129,9 +129,13 @@ const Cart: React.FC<CartProps> = ({ cart, setCart, setProducts }) => {
                 {
                     cart.products.map((product, index) => (
                         <div key={index} className="cart__product">
+                            <div className='cart__product__image'>
+                            <Image src={`${process.env.basePath}${product.image.thumbnail}`} alt={product.name} width={50} height={50} />
                             <div className="cart__product--info">
                                 <h3 className='cart__product--name'>{product.name}</h3>
+                                
                                 <p><span className='cart__product--qty'>{product.quantity}x </span> @ ${product.price.toFixed(2)} </p>
+                            </div>
                             </div>
                             <div className="cart__product--price"><span>${(product.price * product.quantity).toFixed(2)}</span> </div>
                         </div>
