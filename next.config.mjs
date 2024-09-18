@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
+const basePath = isProd ? '/dessert-market' : '';
 const nextConfig = {
   /**
    * Enable static exports for the App Router.
@@ -13,8 +14,7 @@ const nextConfig = {
    *
    * @see https://nextjs.org/docs/app/api-reference/next-config-js/basePath
    */
-  basePath: isProd ? '/dessert-market' : '',
-  assetPrefix: isProd ? '/dessert-market/' : '',
+  basePath,
   env: {
     basePath,
   },
