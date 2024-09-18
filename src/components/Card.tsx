@@ -2,7 +2,6 @@
 
 import '@/styles/card.scss';
 import Image from 'next/image';
-import { useRouter } from 'next/router';
 import addtoCartIcon from '/public/images/icon-add-to-cart.svg';
 import DecrementIcon from '@/components/DecrementIcon';
 import IncrementIcon from '@/components/IncrementIcon';
@@ -28,8 +27,8 @@ interface CardProps {
 }
 
 const Card: React.FC<CardProps> = ({ product, setProducts, setCart, index }) => {
-    
-    const { basePath } = useRouter(); 
+    const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""; 
+
     const addQuantity = () => {
         setProducts((prevProducts) => {
 
